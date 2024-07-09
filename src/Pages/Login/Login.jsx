@@ -92,11 +92,11 @@ const Login = () => {
                     <p className="text-center mt-4">Don’t have an account?<Link className="text-[#F9A51A]" to='/signup'> Create an account</Link> </p>
                 </div>
                 <div className="divider"> Or </div>
-                {/* <div className="mt-4">
+                <div className="mt-4">
                     <button onClick={hanldeGoogleLogin} className='w-full px-4 py-3 font-bold text-center btn'>
                         Sign in with Google
                     </button>
-                </div> */}
+                </div>
             </form>
         </div>
     );
