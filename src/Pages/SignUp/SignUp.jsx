@@ -113,7 +113,7 @@ const from = location.state  || '/'
                     >
                         Sign Up
                     </button>
-                    {/* <p className="text-center mt-4">Already have an account?<Link className="text-[#F9A51A]" to='/login'>Login</Link> </p> */}
+                    <p className="text-center mt-4">Already have an account?<Link className="text-[#F9A51A]" to='/login'>Login</Link> </p>
                 </div>
             </form>
         </div>
