@@ -63,7 +63,7 @@ const Navbar = () => {
                 <div>Bid Requests</div>
               </li>
               <li className='mt-2'>
-                <button onClick={logOut} className='bg-gray-200 block text-center'>Logout</button>
+                {/* <button onClick={logOut} className='bg-gray-200 block text-center'>Logout</button> */}
               </li>
             </ul>
           </div>
