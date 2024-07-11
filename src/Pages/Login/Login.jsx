@@ -1,19 +1,19 @@
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 
 
 const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const { user, signIn, signInWithGoogle } = useContext(AuthContext);
-    useEffect(() => {
-        if (user) {
-            navigate('/')
-        }
-    }, [navigate, user]);
+    const { user, signIn, signInWithGoogle, loading } = useContext(AuthContext);
+    // useEffect(() => {
+    //     if (user) {
+    //         navigate('/')
+    //     }
+    // }, [navigate, user]);
     const from = location.state || '/'
     const handleLogin = async e => {
         e.preventDefault();
@@ -37,10 +37,16 @@ const Login = () => {
             await signInWithGoogle()
             navigate(from, { replace: true });
             toast.success("SignIn successful")
-        }catch (err) {
+        } catch (err) {
             console.log(err);
             toast.error(err?.message)
         }
+
+    }
+    if (loading) return <span className="loading loading-dots loading-xs"></span>
+    if (user) {
+        return <Navigate to='/' ></Navigate>
+
     }
     return (
         <div className="md:w-3/4 lg:w-1/3 mx-auto  border p-6 rounded-lg">

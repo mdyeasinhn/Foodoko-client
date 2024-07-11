@@ -8,7 +8,7 @@ const TopFoods = () => {
     useEffect(() => {
         const getData = async () => {
             const {data} = await axios(`${import.meta.env.VITE_API_URL}/items`);
-            setItems(data)
+            setItems(data.slice(0, 6));
         }
         getData();
     }, [])

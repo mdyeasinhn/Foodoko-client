@@ -13,6 +13,8 @@ const Purchase = () => {
     const purchase = useLoaderData();
     const [startDate, setStartDate] = useState(new Date());
     const { FoodName, FoodImage, FoodCategory, Price, _id, MadeBy, FoodOrigin, Description, Quantity, buyer } = purchase || {}
+
+
     const handleMyOrder = async e => {
         e.preventDefault();
         if(user?.email === buyer?.email){
@@ -41,7 +43,7 @@ const Purchase = () => {
             const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/order`, order)
             console.log(data)
             toast.success('Order Placed Successfully!')
-            // navigate('/my-order')
+            navigate('/my-orders')
         } catch (err) {
             toast.err(err.message)
             e.target.reset()
