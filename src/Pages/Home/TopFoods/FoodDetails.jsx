@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import img from '../../../assets/img/img1.jpg'
 const FoodDetails = () => {
     const item = useLoaderData();
     const { FoodName, FoodImage, FoodCategory, Price, _id, MadeBy, FoodOrigin, Description } = item || {}

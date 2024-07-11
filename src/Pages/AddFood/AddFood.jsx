@@ -39,7 +39,7 @@ const AddFood = () => {
             toast.success('Food Added Successfully!')
             navigate('/my-food')
         } catch (err) {
-            toast.err(error.message)
+            toast.error(err.message)
             e.target.reset()
         }
 
