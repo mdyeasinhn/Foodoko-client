@@ -9,11 +9,14 @@ import Purchase from "../Pages/Home/TopFoods/Purchase";
 import AddFood from "../Pages/AddFood/AddFood";
 import MyFood from "../Pages/MyFood/MyFood";
 import UpdateFood from "../Pages/UpdateFood/UpdateFood";
+import ErrorPage from "../Shared/ErrorPage/ErrorPage";
+import MyOrder from "../Pages/MyOrder/MyOrder";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main/>,
+      errorElement: <ErrorPage/>,
       children : [
         {
             index: true,
@@ -46,6 +49,10 @@ const router = createBrowserRouter([
         {
             path : "/add-food",
             element : <PrivateRoute><AddFood/></PrivateRoute>
+        },
+        {
+            path : "/my-orders",
+            element : <PrivateRoute><MyOrder/></PrivateRoute>
         },
         {
             path : "/my-food",

@@ -9,11 +9,11 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { user, signIn, signInWithGoogle, loading } = useContext(AuthContext);
-    // useEffect(() => {
-    //     if (user) {
-    //         navigate('/')
-    //     }
-    // }, [navigate, user]);
+    useEffect(() => {
+        if (user) {
+            navigate('/')
+        }
+    }, [navigate, user]);
     const from = location.state || '/'
     const handleLogin = async e => {
         e.preventDefault();
@@ -43,11 +43,7 @@ const Login = () => {
         }
 
     }
-    if (loading) return <span className="loading loading-dots loading-xs"></span>
-    if (user) {
-        return <Navigate to='/' ></Navigate>
-
-    }
+   if(user || loading) return
     return (
         <div className="md:w-3/4 lg:w-1/3 mx-auto  border p-6 rounded-lg">
             <h2 className="text-2xl font-bold">Login</h2>

@@ -17,9 +17,7 @@ const Purchase = () => {
 
     const handleMyOrder = async e => {
         e.preventDefault();
-        if(user?.email === buyer?.email){
-            return  toast.error('Action not permitted!')
-        }
+        
         const form = e.target;
         const orderId = _id;
         const foodName = FoodName;
@@ -28,7 +26,8 @@ const Purchase = () => {
         const date = startDate;
         const comment = form.comment.value;
         const quantity = form.quantity.value;
-        const status = "Pending"
+        const Category = FoodCategory;
+        const status = "Processing"
         const order = {
             price,
             orderId,
@@ -37,6 +36,7 @@ const Purchase = () => {
             date,
             comment,
             quantity,
+            Category,
             status,
         }
         try {
