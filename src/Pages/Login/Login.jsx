@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from 'react-helmet-async'
 
 
 const Login = () => {
@@ -43,9 +44,12 @@ const Login = () => {
         }
 
     }
-   if(user || loading) return
+    if (user || loading) return
     return (
         <div className="md:w-3/4 lg:w-1/3 mx-auto  border p-6 rounded-lg">
+            <Helmet>
+                <title>Foodoko | Login</title>
+            </Helmet>
             <h2 className="text-2xl font-bold">Login</h2>
             <form onSubmit={handleLogin}>
                 <div className='mt-4'>

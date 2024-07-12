@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async'
+
 const FoodDetails = () => {
     const item = useLoaderData();
     const { FoodName, FoodImage, FoodCategory, Price, _id, MadeBy, FoodOrigin, Description } = item || {}
     return (
         <div className='flex items-center gap-8 mt-10'>
+             <Helmet>
+                <title>Foodoko | Details</title>
+            </Helmet>
             <div>
                 <img
                     src={FoodImage}

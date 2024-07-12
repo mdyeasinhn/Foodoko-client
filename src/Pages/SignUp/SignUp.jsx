@@ -3,6 +3,8 @@ import { useContext, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import {AuthContext} from "../../Provider/AuthProvider"
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import {Helmet} from 'react-helmet-async'
+
 const SignUp = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -37,6 +39,9 @@ const from = location.state  || '/'
     }
     return (
         <div className='md:w-3/4 lg:w-1/3 mx-auto border p-6 rounded-lg'>
+                <Helmet>
+                <title>Foodoko | Sign up</title>
+            </Helmet>
             <h2 className='text-3xl font-bold mt-2'>Create an account</h2>
             <form   onSubmit={handleSignUp}>
                 <div className='mt-4'>

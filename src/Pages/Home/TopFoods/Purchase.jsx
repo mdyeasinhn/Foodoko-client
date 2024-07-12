@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import axios from 'axios'
+import { Helmet } from 'react-helmet-async'
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -52,6 +53,9 @@ const Purchase = () => {
     }
     return (
         <div className='flex flex-col md:flex-row justify-around gap-5  items-center min-h-[calc(100vh-306px)] md:max-w-screen-xl mx-auto '>
+              <Helmet>
+                <title>Foodoko | Purchase</title>
+            </Helmet>
             {/* Job Details */}
             <div className='flex-1  px-4 py-7 bg-white rounded-md shadow-md md:min-h-[350px]'>
 

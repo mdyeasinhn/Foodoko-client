@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
+import {Helmet} from 'react-helmet-async'
 
 const MyFood = () => {
     const { user } = useContext(AuthContext);
@@ -31,6 +32,9 @@ const MyFood = () => {
     }
     return (
         <section className='container px-4 mx-auto pt-12'>
+               <Helmet>
+                <title>Foodoko | My Foods</title>
+            </Helmet>
             <div className='flex items-center gap-x-3'>
                 <h2 className='text-lg font-medium text-gray-800 '>My Foods</h2>
 

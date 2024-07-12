@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import axios from 'axios';
+import {Helmet} from 'react-helmet-async'
 
 const MyOrder = () => {
     const { user } = useContext(AuthContext);
@@ -16,6 +17,9 @@ const MyOrder = () => {
     console.log(orders);
     return (
         <section className='container px-4 mx-auto pt-12'>
+                <Helmet>
+                <title>Foodoko | My Orders</title>
+            </Helmet>
             <div className='flex items-center gap-x-3'>
                 <h2 className='text-lg font-medium text-gray-800 '>My Orders</h2>
 

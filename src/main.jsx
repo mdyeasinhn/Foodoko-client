@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom/client'
+import {HelmetProvider} from 'react-helmet-async'
 import './index.css'
 
 import {
@@ -13,7 +14,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <div className='max-w-7xl mx-auto font-DM'>
     <React.StrictMode>
     <AuthProvider>
+    <HelmetProvider>
     <RouterProvider router={router} />
+    </HelmetProvider>
     </AuthProvider>
       <Toaster/>
     </React.StrictMode>,
