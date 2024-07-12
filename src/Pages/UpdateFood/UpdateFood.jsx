@@ -174,8 +174,8 @@ const UpdateFood = () => {
                         ></textarea>
                     </div>
                     <div className='flex justify-end mt-6'>
-                        <button className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
-                            Save
+                        <button className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-orange-400 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+                            Update
                         </button>
                     </div>
                 </form>

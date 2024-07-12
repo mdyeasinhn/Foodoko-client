@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
+import axios from 'axios'
 import {
     createUserWithEmailAndPassword,
     getAuth,
@@ -51,9 +52,27 @@ const AuthProvider = ({ children }) => {
     // onAuthStateChange
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            const userEmail = currentUser?.email || user?.email;
+            const loggedUser = {email: userEmail}
             setUser(currentUser)
             console.log('CurrentUser', currentUser)
-            setLoading(false)
+            setLoading(false);
+            // if user exists then issue a token
+            if(currentUser){
+
+                axios.post(`${import.meta.env.VITE_API_URL}/jwt`,loggedUser, {withCredentials: true})
+                .then(res=>{
+                    console.log('token response',res.data);
+                })
+            }
+            else{
+                axios.post(`${import.meta.env.VITE_API_URL}/logout`, loggedUser,{
+                    withCredentials: true
+                })
+                .then(res=>{
+                    console.log(res.data);
+                })
+            }
         })
         return () => {
             return unsubscribe()

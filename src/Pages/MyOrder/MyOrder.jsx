@@ -11,7 +11,7 @@ const MyOrder = () => {
     }, [user])
 
     const getData = async () => {
-        const { data } = await axios(`${import.meta.env.VITE_API_URL}/orders/${user.email}`)
+        const { data } = await axios(`${import.meta.env.VITE_API_URL}/orders/${user.email}`, {withCredentials: true})
         setOrders(data)
     }
     console.log(orders);

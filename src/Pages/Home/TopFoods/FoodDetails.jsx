@@ -29,7 +29,7 @@ const FoodDetails = () => {
                 </div>
                 <div className='flex justify-between mt-6'>
                     <h2 className='mt-3 font-semibold'>Price : $ {Price}</h2>
-                    <Link to={`/purchase/${_id}`} className="btn "> Purchase</Link>
+                    <Link to={`/purchase/${_id}`} className="btn bg-orange-400"> Purchase</Link>
                 </div>
             </div>
 
