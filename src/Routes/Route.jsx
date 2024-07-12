@@ -11,6 +11,7 @@ import MyFood from "../Pages/MyFood/MyFood";
 import UpdateFood from "../Pages/UpdateFood/UpdateFood";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
 import MyOrder from "../Pages/MyOrder/MyOrder";
+import AllFood from "../Pages/AllFood/AllFood";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
         {
             index: true,
             element : <Home/>,
+          
+        },
+        {
+            path: '/all-foods',
+            element : <AllFood/>,
           
         },
         {
