@@ -8,7 +8,7 @@ import {Helmet} from 'react-helmet-async'
 const SignUp = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const {createUser, user, setUser, updateUserProfile, } = useContext(AuthContext);
+    const {createUser, user, setUser, updateUserProfile, loading } = useContext(AuthContext);
 useEffect(()=>{
         if(user){
             navigate('/')
@@ -37,6 +37,8 @@ const from = location.state  || '/'
             toast.error(err?.message)
         }
     }
+    if (user || loading) return
+
     return (
         <div className='md:w-3/4 lg:w-1/3 mx-auto border p-6 rounded-lg'>
                 <Helmet>
