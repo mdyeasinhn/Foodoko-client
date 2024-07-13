@@ -66,6 +66,7 @@ const MyOrder = () => {
                                         >
                                             Category
                                         </th>
+                                     
                                         <th className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'>
                                             Comment
                                         </th>
@@ -74,6 +75,12 @@ const MyOrder = () => {
                                             className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'
                                         >
                                             Status
+                                        </th>
+                                        <th
+                                            scope='col'
+                                            className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'
+                                        >
+                                            Quantity
                                         </th>
 
 
@@ -104,14 +111,18 @@ const MyOrder = () => {
                                                         </p>
                                                     </div>
                                                 </td>
+                                              
                                                 <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
                                                     {order.comment}
                                                 </td>
-                                                <td className='px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap'>
+                                                <td className='px-2 py-4 text-sm font-medium text-gray-700 whitespace-nowrap'>
                                                     <div className='inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-yellow-100/60 text-yellow-500'>
                                                         <span className='h-1.5 w-1.5 rounded-full bg-yellow-500'></span>
                                                         <h2 className='text-sm font-normal '>{order.status}</h2>
                                                     </div>
+                                                </td>
+                                                <td className='px-10 py-4 text-sm text-gray-500  whitespace-nowrap'>
+                                                    {order.quantity}
                                                 </td>
 
                                             </tr>
